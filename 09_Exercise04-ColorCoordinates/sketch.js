@@ -21,6 +21,6 @@ function draw() {
     rotate(random())
     ellipse(random(width),random(height),random(20,40),random(20,40));
     pop();
-  }
+}
   noLoop()
 }
