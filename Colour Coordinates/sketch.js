@@ -11,31 +11,24 @@ function setup() {
 function draw() {
   background(0); //Set a background color
 
-fill(100,90,210);
-rect (0,0,200,200);
-fill(0,200,150);
-rect (0,200,200,200);
-fill(250,0,255);
-rect (200,0,200,200);
-fill(200,25,0);
-rect (200,200,200,200);
+  var s1 = map(mouseX,0,width,0,255);
+  var s2 = map(mouseY,0,width,0,255);
+  var s3 = map(mouseX,0,width,255,0);
+  var s4 = map(mouseY,0,width,255,0);
 
-if(mouseX<200 && mouseY<200){
-  fill(0,0,0);
-  rect(0,0,200,200);
-}
+  var colour1 = color(255,0,0,s1);
+  var colour2 = color(0,255,0,s2);
+  var colour3 = color(0,0,255,s3);
+  var colour4 = color(255,0,255,s4);
 
-if((mouseX>200 && mouseX<400) && mouseY<200){
-  fill(0,0,0);
-  rect(200,0,200,200);
-}
-if((mouseY>200 && mouseY<400) && mouseX<200){
-  fill(0,0,0);
-  rect(0,200,200,200);
-}
-if((mouseX>200 && mouseX<400) && (mouseY>200 && mouseY<400)){
-  fill(0,0,0);
-  rect(200,200,200,200);
-}
+  fill(colour1);
+  rect (0,0,200,200);
+  fill(colour2);
+  rect (0,200,200,200);
+  fill(colour3);
+  rect (200,0,200,200);
+  fill(colour4);
+  rect (200,200,200,200);
+
   console.log("Rendering...") //Print a message to the console
 }
