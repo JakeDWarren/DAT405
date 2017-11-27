@@ -1,27 +1,41 @@
-//https://p5js.org
-//https://p5js.org/learn/
-
-//DAT405 / GAD405
-//00_Template
-//The purpose of this sketch is to provide a basic template
-//for P5.js projects
+//DAT405
+//Colour Coordinates
+//This sketches uses input from the mouse to adjust the defined colours within four position rectangles
 
 //Initialization function
 function setup() {
-  //Print a message to the console - to view using Chrome:
-  //View > Developer > Developer Tools > Console
-  console.log("Initialization: OK")
-  createCanvas(200,500);
-  createBorder(5,8)
+  console.log("Initialization: OK") //Print a message to the console
+  createCanvas(400,400); //Create the background
 }
-
 //Rendering function
 function draw() {
-  //Set a background color
-  background(60,200,105);
+  background(0); //Set a background color
 
-  //Print a message to the console - to view using Chrome:
-  //View > Developer > Developer Tools > Console
-  console.log("Rendering...")
-  noLoop();
+fill(100,90,210);
+rect (0,0,200,200);
+fill(0,200,150);
+rect (0,200,200,200);
+fill(250,0,255);
+rect (200,0,200,200);
+fill(200,25,0);
+rect (200,200,200,200);
+
+if(mouseX<200 && mouseY<200){
+  fill(0,0,0);
+  rect(0,0,200,200);
+}
+
+if((mouseX>200 && mouseX<400) && mouseY<200){
+  fill(0,0,0);
+  rect(200,0,200,200);
+}
+if((mouseY>200 && mouseY<400) && mouseX<200){
+  fill(0,0,0);
+  rect(0,200,200,200);
+}
+if((mouseX>200 && mouseX<400) && (mouseY>200 && mouseY<400)){
+  fill(0,0,0);
+  rect(200,200,200,200);
+}
+  console.log("Rendering...") //Print a message to the console
 }
