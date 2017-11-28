@@ -3,6 +3,7 @@ let speed = 3; let diameter = 50;
 let x1; let y1;
 let x2; let y2;
 let x3;
+let col;
 function setup() {
   createCanvas(500,500);
   x1 = width/2;
@@ -11,6 +12,8 @@ function setup() {
 }
 
 function draw() {
+
+
     x1 += random(-speed, speed);
     y1 += random(-speed, speed);
     x1 = constrain(x1, 0, width/2);
@@ -24,18 +27,12 @@ function draw() {
     fill (r, g, b, 120);
     ellipse(x1,y1,diameter,diameter);//Top left circle
 
-    x2 = x1 - 500;
-    if (x2<0){
-      x2 = x2 * -1;
-    }
+    x2 = map(x1,0,500,500,0)
     console.log("x1: " + x1);
     console.log("x2: " + x2);
     ellipse(x2, y1,diameter,diameter);//Top right circle
 
-    y2 = y1 - 500;
-    if (y2<0){
-      y2 = y2 *-1;
-    }
+    y2 = map(y1,0,500,500,0)
     console.log("y1 " + y1);
     console.log("y2 " + y2);
     ellipse(x1, y2,diameter, diameter);//Bottom left circle
