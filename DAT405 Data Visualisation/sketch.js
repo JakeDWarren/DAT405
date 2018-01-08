@@ -20,19 +20,14 @@ function preload() {
 
 function setup() {
   console.log(result); //Return all JSON data
-  //console.log("Location: " + getLocation) //Show the location we are searching
-  //console.log("Temperature: " + weather.main.temp + "°C"); //Show location's conditions (temperature)
-  //console.log("Temperature (min): " + weather.main.temp_min + "°C"); //Minimum temperature
-  //console.log("Temperature (max): " + weather.main.temp_max + "°C"); //Maximum temperature
-  //console.log("Humidity: " + weather.main.humidity); //Humidity
-  //console.log("Pressure: " + weather.main.pressure); //Pressure
+  var canvas = createCanvas(1280, 720); //Creating canvas
+  canvas.positon(700,500);
+  background(164,205,253); //Background colour set
 
-  //Display temperature information on the screen
-  createCanvas(400, 400);
-  background(160);
-  textAlign(CENTER);
-  textSize(18);
-  //text("Current Temperature in Plymouth is " + weather.main.temp + "°C", width/2, height/2);
+  //textAlign(CENTER);
+  //textSize(18);
+  //text("Location is " + result.result.latitude + " " + result.result.longitude, width/2, height/2);
+
   noLoop();
 }
 
